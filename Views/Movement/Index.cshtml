@@ -1,0 +1,38 @@
+﻿
+@model JanaltaPathProject.ViewModels.PathInfo
+@{
+    ViewBag.Title = "Index";
+}
+
+<div>
+    @Html.LabelFor(m => m.LastPoint):
+    @Html.DisplayFor(m => m.LastPoint)
+</div>
+<div>
+    @Html.LabelFor(m => m.ImageData):
+</div>
+<div class="text-center">
+
+    <img src="@Model.ImageData" class="rounded mx-auto d-block">
+</div>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Duplicated Point</th>
+            <th scope="col">Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var point in Model.DuplicatedPoint)
+        {
+            <tr scope="row">
+                <td>@point.LocPoint</td>
+                <td>@point.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h2>
+</h2>
+
+
